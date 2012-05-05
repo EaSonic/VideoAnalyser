@@ -1,0 +1,11 @@
+//
+// Prefix header for all source files of the 'VideoAnalyser' target in the 'VideoAnalyser' project
+//
+
+#ifdef __cplusplus
+    #include "opencv2/opencv.hpp"
+#endif
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

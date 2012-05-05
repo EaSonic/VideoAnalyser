@@ -1,0 +1,632 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		187AB31D1554C61F00E46450 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB31C1554C61F00E46450 /* Cocoa.framework */; };
+		187AB3271554C61F00E46450 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 187AB3251554C61F00E46450 /* InfoPlist.strings */; };
+		187AB3291554C61F00E46450 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 187AB3281554C61F00E46450 /* main.m */; };
+		187AB32D1554C61F00E46450 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 187AB32B1554C61F00E46450 /* Credits.rtf */; };
+		187AB3331554C61F00E46450 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187AB3311554C61F00E46450 /* MainMenu.xib */; };
+		187AB3361554C61F00E46450 /* VideoAnalyser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 187AB3341554C61F00E46450 /* VideoAnalyser.xcdatamodeld */; };
+		187AB33E1554C62000E46450 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB33D1554C62000E46450 /* SenTestingKit.framework */; };
+		187AB33F1554C62000E46450 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB31C1554C61F00E46450 /* Cocoa.framework */; };
+		187AB3471554C62000E46450 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 187AB3451554C62000E46450 /* InfoPlist.strings */; };
+		187AB34A1554C62000E46450 /* VideoAnalyserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 187AB3491554C62000E46450 /* VideoAnalyserTests.m */; };
+		187AB3601554C67500E46450 /* libopencv_calib3d.2.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB3531554C67500E46450 /* libopencv_calib3d.2.3.1.dylib */; };
+		187AB3611554C67500E46450 /* libopencv_contrib.2.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB3541554C67500E46450 /* libopencv_contrib.2.3.1.dylib */; };
+		187AB3621554C67500E46450 /* libopencv_core.2.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB3551554C67500E46450 /* libopencv_core.2.3.1.dylib */; };
+		187AB3631554C67500E46450 /* libopencv_features2d.2.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB3561554C67500E46450 /* libopencv_features2d.2.3.1.dylib */; };
+		187AB3641554C67500E46450 /* libopencv_flann.2.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB3571554C67500E46450 /* libopencv_flann.2.3.1.dylib */; };
+		187AB3651554C67500E46450 /* libopencv_gpu.2.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB3581554C67500E46450 /* libopencv_gpu.2.3.1.dylib */; };
+		187AB3661554C67500E46450 /* libopencv_highgui.2.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB3591554C67500E46450 /* libopencv_highgui.2.3.1.dylib */; };
+		187AB3671554C67500E46450 /* libopencv_imgproc.2.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB35A1554C67500E46450 /* libopencv_imgproc.2.3.1.dylib */; };
+		187AB3681554C67500E46450 /* libopencv_legacy.2.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB35B1554C67500E46450 /* libopencv_legacy.2.3.1.dylib */; };
+		187AB3691554C67500E46450 /* libopencv_ml.2.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB35C1554C67500E46450 /* libopencv_ml.2.3.1.dylib */; };
+		187AB36A1554C67500E46450 /* libopencv_objdetect.2.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB35D1554C67500E46450 /* libopencv_objdetect.2.3.1.dylib */; };
+		187AB36B1554C67500E46450 /* libopencv_ts.2.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB35E1554C67500E46450 /* libopencv_ts.2.3.1.dylib */; };
+		187AB36C1554C67500E46450 /* libopencv_video.2.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB35F1554C67500E46450 /* libopencv_video.2.3.1.dylib */; };
+		187AB36F1554C6A800E46450 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB36E1554C6A800E46450 /* AVFoundation.framework */; };
+		187AB3721554C73200E46450 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB3701554C73200E46450 /* Quartz.framework */; };
+		187AB3731554C73200E46450 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB3711554C73200E46450 /* QuartzCore.framework */; };
+		187AB3831554D72300E46450 /* VideoAnalyserDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 187AB3821554D72300E46450 /* VideoAnalyserDelegate.mm */; };
+		187AB38B1555071000E46450 /* VideoAnalyzerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 187AB38A1555071000E46450 /* VideoAnalyzerView.mm */; };
+		187AB3931555080500E46450 /* VideoAnalyserViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 187AB3921555080500E46450 /* VideoAnalyserViewController.mm */; };
+		18A7F3911555CD7E0079797D /* NSImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 18A7F3901555CD7E0079797D /* NSImage+OpenCV.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		187AB3401554C62000E46450 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187AB30F1554C61E00E46450 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 187AB3171554C61F00E46450;
+			remoteInfo = VideoAnalyser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		187AB3181554C61F00E46450 /* VideoAnalyser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoAnalyser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		187AB31C1554C61F00E46450 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		187AB31F1554C61F00E46450 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		187AB3201554C61F00E46450 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		187AB3211554C61F00E46450 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		187AB3241554C61F00E46450 /* VideoAnalyser-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VideoAnalyser-Info.plist"; sourceTree = "<group>"; };
+		187AB3261554C61F00E46450 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		187AB3281554C61F00E46450 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		187AB32A1554C61F00E46450 /* VideoAnalyser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VideoAnalyser-Prefix.pch"; sourceTree = "<group>"; };
+		187AB32C1554C61F00E46450 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		187AB3321554C61F00E46450 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		187AB3351554C61F00E46450 /* VideoAnalyser.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VideoAnalyser.xcdatamodel; sourceTree = "<group>"; };
+		187AB33C1554C62000E46450 /* VideoAnalyserTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoAnalyserTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		187AB33D1554C62000E46450 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		187AB3441554C62000E46450 /* VideoAnalyserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VideoAnalyserTests-Info.plist"; sourceTree = "<group>"; };
+		187AB3461554C62000E46450 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		187AB3481554C62000E46450 /* VideoAnalyserTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoAnalyserTests.h; sourceTree = "<group>"; };
+		187AB3491554C62000E46450 /* VideoAnalyserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoAnalyserTests.m; sourceTree = "<group>"; };
+		187AB3531554C67500E46450 /* libopencv_calib3d.2.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_calib3d.2.3.1.dylib; path = usr/local/lib/libopencv_calib3d.2.3.1.dylib; sourceTree = SDKROOT; };
+		187AB3541554C67500E46450 /* libopencv_contrib.2.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_contrib.2.3.1.dylib; path = usr/local/lib/libopencv_contrib.2.3.1.dylib; sourceTree = SDKROOT; };
+		187AB3551554C67500E46450 /* libopencv_core.2.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.2.3.1.dylib; path = usr/local/lib/libopencv_core.2.3.1.dylib; sourceTree = SDKROOT; };
+		187AB3561554C67500E46450 /* libopencv_features2d.2.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_features2d.2.3.1.dylib; path = usr/local/lib/libopencv_features2d.2.3.1.dylib; sourceTree = SDKROOT; };
+		187AB3571554C67500E46450 /* libopencv_flann.2.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_flann.2.3.1.dylib; path = usr/local/lib/libopencv_flann.2.3.1.dylib; sourceTree = SDKROOT; };
+		187AB3581554C67500E46450 /* libopencv_gpu.2.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_gpu.2.3.1.dylib; path = usr/local/lib/libopencv_gpu.2.3.1.dylib; sourceTree = SDKROOT; };
+		187AB3591554C67500E46450 /* libopencv_highgui.2.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_highgui.2.3.1.dylib; path = usr/local/lib/libopencv_highgui.2.3.1.dylib; sourceTree = SDKROOT; };
+		187AB35A1554C67500E46450 /* libopencv_imgproc.2.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.2.3.1.dylib; path = usr/local/lib/libopencv_imgproc.2.3.1.dylib; sourceTree = SDKROOT; };
+		187AB35B1554C67500E46450 /* libopencv_legacy.2.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_legacy.2.3.1.dylib; path = usr/local/lib/libopencv_legacy.2.3.1.dylib; sourceTree = SDKROOT; };
+		187AB35C1554C67500E46450 /* libopencv_ml.2.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_ml.2.3.1.dylib; path = usr/local/lib/libopencv_ml.2.3.1.dylib; sourceTree = SDKROOT; };
+		187AB35D1554C67500E46450 /* libopencv_objdetect.2.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_objdetect.2.3.1.dylib; path = usr/local/lib/libopencv_objdetect.2.3.1.dylib; sourceTree = SDKROOT; };
+		187AB35E1554C67500E46450 /* libopencv_ts.2.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_ts.2.3.1.dylib; path = usr/local/lib/libopencv_ts.2.3.1.dylib; sourceTree = SDKROOT; };
+		187AB35F1554C67500E46450 /* libopencv_video.2.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_video.2.3.1.dylib; path = usr/local/lib/libopencv_video.2.3.1.dylib; sourceTree = SDKROOT; };
+		187AB36E1554C6A800E46450 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		187AB3701554C73200E46450 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		187AB3711554C73200E46450 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		187AB3811554D72300E46450 /* VideoAnalyserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoAnalyserDelegate.h; sourceTree = "<group>"; };
+		187AB3821554D72300E46450 /* VideoAnalyserDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoAnalyserDelegate.mm; sourceTree = "<group>"; };
+		187AB3891555071000E46450 /* VideoAnalyzerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoAnalyzerView.h; sourceTree = "<group>"; };
+		187AB38A1555071000E46450 /* VideoAnalyzerView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoAnalyzerView.mm; sourceTree = "<group>"; };
+		187AB3911555080500E46450 /* VideoAnalyserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoAnalyserViewController.h; sourceTree = "<group>"; };
+		187AB3921555080500E46450 /* VideoAnalyserViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoAnalyserViewController.mm; sourceTree = "<group>"; };
+		18A7F38F1555CD7E0079797D /* NSImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+OpenCV.h"; sourceTree = "<group>"; };
+		18A7F3901555CD7E0079797D /* NSImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSImage+OpenCV.mm"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		187AB3151554C61F00E46450 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				187AB3721554C73200E46450 /* Quartz.framework in Frameworks */,
+				187AB3731554C73200E46450 /* QuartzCore.framework in Frameworks */,
+				187AB36F1554C6A800E46450 /* AVFoundation.framework in Frameworks */,
+				187AB3601554C67500E46450 /* libopencv_calib3d.2.3.1.dylib in Frameworks */,
+				187AB3611554C67500E46450 /* libopencv_contrib.2.3.1.dylib in Frameworks */,
+				187AB3621554C67500E46450 /* libopencv_core.2.3.1.dylib in Frameworks */,
+				187AB3631554C67500E46450 /* libopencv_features2d.2.3.1.dylib in Frameworks */,
+				187AB3641554C67500E46450 /* libopencv_flann.2.3.1.dylib in Frameworks */,
+				187AB3651554C67500E46450 /* libopencv_gpu.2.3.1.dylib in Frameworks */,
+				187AB3661554C67500E46450 /* libopencv_highgui.2.3.1.dylib in Frameworks */,
+				187AB3671554C67500E46450 /* libopencv_imgproc.2.3.1.dylib in Frameworks */,
+				187AB3681554C67500E46450 /* libopencv_legacy.2.3.1.dylib in Frameworks */,
+				187AB3691554C67500E46450 /* libopencv_ml.2.3.1.dylib in Frameworks */,
+				187AB36A1554C67500E46450 /* libopencv_objdetect.2.3.1.dylib in Frameworks */,
+				187AB36B1554C67500E46450 /* libopencv_ts.2.3.1.dylib in Frameworks */,
+				187AB36C1554C67500E46450 /* libopencv_video.2.3.1.dylib in Frameworks */,
+				187AB31D1554C61F00E46450 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		187AB3381554C62000E46450 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				187AB33E1554C62000E46450 /* SenTestingKit.framework in Frameworks */,
+				187AB33F1554C62000E46450 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		187AB30D1554C61E00E46450 = {
+			isa = PBXGroup;
+			children = (
+				187AB3221554C61F00E46450 /* VideoAnalyser */,
+				187AB3421554C62000E46450 /* VideoAnalyserTests */,
+				187AB31B1554C61F00E46450 /* Frameworks */,
+				187AB3191554C61F00E46450 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		187AB3191554C61F00E46450 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				187AB3181554C61F00E46450 /* VideoAnalyser.app */,
+				187AB33C1554C62000E46450 /* VideoAnalyserTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		187AB31B1554C61F00E46450 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				187AB3701554C73200E46450 /* Quartz.framework */,
+				187AB3711554C73200E46450 /* QuartzCore.framework */,
+				187AB36E1554C6A800E46450 /* AVFoundation.framework */,
+				187AB36D1554C68000E46450 /* OpenCV */,
+				187AB31C1554C61F00E46450 /* Cocoa.framework */,
+				187AB33D1554C62000E46450 /* SenTestingKit.framework */,
+				187AB31E1554C61F00E46450 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		187AB31E1554C61F00E46450 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				187AB31F1554C61F00E46450 /* AppKit.framework */,
+				187AB3201554C61F00E46450 /* CoreData.framework */,
+				187AB3211554C61F00E46450 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		187AB3221554C61F00E46450 /* VideoAnalyser */ = {
+			isa = PBXGroup;
+			children = (
+				187AB37C1554CA7300E46450 /* Resources */,
+				187AB37B1554CA2600E46450 /* Classes */,
+				187AB3231554C61F00E46450 /* Supporting Files */,
+			);
+			path = VideoAnalyser;
+			sourceTree = "<group>";
+		};
+		187AB3231554C61F00E46450 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				187AB3281554C61F00E46450 /* main.m */,
+				187AB32A1554C61F00E46450 /* VideoAnalyser-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		187AB3421554C62000E46450 /* VideoAnalyserTests */ = {
+			isa = PBXGroup;
+			children = (
+				187AB3481554C62000E46450 /* VideoAnalyserTests.h */,
+				187AB3491554C62000E46450 /* VideoAnalyserTests.m */,
+				187AB3431554C62000E46450 /* Supporting Files */,
+			);
+			path = VideoAnalyserTests;
+			sourceTree = "<group>";
+		};
+		187AB3431554C62000E46450 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				187AB3441554C62000E46450 /* VideoAnalyserTests-Info.plist */,
+				187AB3451554C62000E46450 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		187AB36D1554C68000E46450 /* OpenCV */ = {
+			isa = PBXGroup;
+			children = (
+				187AB3531554C67500E46450 /* libopencv_calib3d.2.3.1.dylib */,
+				187AB3541554C67500E46450 /* libopencv_contrib.2.3.1.dylib */,
+				187AB3551554C67500E46450 /* libopencv_core.2.3.1.dylib */,
+				187AB3561554C67500E46450 /* libopencv_features2d.2.3.1.dylib */,
+				187AB3571554C67500E46450 /* libopencv_flann.2.3.1.dylib */,
+				187AB3581554C67500E46450 /* libopencv_gpu.2.3.1.dylib */,
+				187AB3591554C67500E46450 /* libopencv_highgui.2.3.1.dylib */,
+				187AB35A1554C67500E46450 /* libopencv_imgproc.2.3.1.dylib */,
+				187AB35B1554C67500E46450 /* libopencv_legacy.2.3.1.dylib */,
+				187AB35C1554C67500E46450 /* libopencv_ml.2.3.1.dylib */,
+				187AB35D1554C67500E46450 /* libopencv_objdetect.2.3.1.dylib */,
+				187AB35E1554C67500E46450 /* libopencv_ts.2.3.1.dylib */,
+				187AB35F1554C67500E46450 /* libopencv_video.2.3.1.dylib */,
+			);
+			name = OpenCV;
+			sourceTree = "<group>";
+		};
+		187AB3781554C9BC00E46450 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				187AB39515550B2800E46450 /* VideoAnalyzerModel */,
+				187AB39415550B1200E46450 /* NSImage+OpenCV */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		187AB3791554C9C800E46450 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				187AB3891555071000E46450 /* VideoAnalyzerView.h */,
+				187AB38A1555071000E46450 /* VideoAnalyzerView.mm */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		187AB37A1554C9CF00E46450 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				187AB388155501AD00E46450 /* ViewController */,
+				187AB3871555019C00E46450 /* AppDelegate */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		187AB37B1554CA2600E46450 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				187AB37A1554C9CF00E46450 /* Controller */,
+				187AB3791554C9C800E46450 /* View */,
+				187AB3781554C9BC00E46450 /* Model */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		187AB37C1554CA7300E46450 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				187AB3241554C61F00E46450 /* VideoAnalyser-Info.plist */,
+				187AB3251554C61F00E46450 /* InfoPlist.strings */,
+				187AB32B1554C61F00E46450 /* Credits.rtf */,
+				187AB3341554C61F00E46450 /* VideoAnalyser.xcdatamodeld */,
+				187AB3311554C61F00E46450 /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		187AB3871555019C00E46450 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				187AB3811554D72300E46450 /* VideoAnalyserDelegate.h */,
+				187AB3821554D72300E46450 /* VideoAnalyserDelegate.mm */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		187AB388155501AD00E46450 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				187AB3911555080500E46450 /* VideoAnalyserViewController.h */,
+				187AB3921555080500E46450 /* VideoAnalyserViewController.mm */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		187AB39415550B1200E46450 /* NSImage+OpenCV */ = {
+			isa = PBXGroup;
+			children = (
+				18A7F38F1555CD7E0079797D /* NSImage+OpenCV.h */,
+				18A7F3901555CD7E0079797D /* NSImage+OpenCV.mm */,
+			);
+			name = "NSImage+OpenCV";
+			sourceTree = "<group>";
+		};
+		187AB39515550B2800E46450 /* VideoAnalyzerModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = VideoAnalyzerModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		187AB3171554C61F00E46450 /* VideoAnalyser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 187AB34D1554C62000E46450 /* Build configuration list for PBXNativeTarget "VideoAnalyser" */;
+			buildPhases = (
+				187AB3141554C61F00E46450 /* Sources */,
+				187AB3151554C61F00E46450 /* Frameworks */,
+				187AB3161554C61F00E46450 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VideoAnalyser;
+			productName = VideoAnalyser;
+			productReference = 187AB3181554C61F00E46450 /* VideoAnalyser.app */;
+			productType = "com.apple.product-type.application";
+		};
+		187AB33B1554C62000E46450 /* VideoAnalyserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 187AB3501554C62000E46450 /* Build configuration list for PBXNativeTarget "VideoAnalyserTests" */;
+			buildPhases = (
+				187AB3371554C62000E46450 /* Sources */,
+				187AB3381554C62000E46450 /* Frameworks */,
+				187AB3391554C62000E46450 /* Resources */,
+				187AB33A1554C62000E46450 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				187AB3411554C62000E46450 /* PBXTargetDependency */,
+			);
+			name = VideoAnalyserTests;
+			productName = VideoAnalyserTests;
+			productReference = 187AB33C1554C62000E46450 /* VideoAnalyserTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		187AB30F1554C61E00E46450 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VideoAnalyser;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 187AB3121554C61E00E46450 /* Build configuration list for PBXProject "VideoAnalyser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 187AB30D1554C61E00E46450;
+			productRefGroup = 187AB3191554C61F00E46450 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				187AB3171554C61F00E46450 /* VideoAnalyser */,
+				187AB33B1554C62000E46450 /* VideoAnalyserTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		187AB3161554C61F00E46450 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				187AB3271554C61F00E46450 /* InfoPlist.strings in Resources */,
+				187AB32D1554C61F00E46450 /* Credits.rtf in Resources */,
+				187AB3331554C61F00E46450 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		187AB3391554C62000E46450 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				187AB3471554C62000E46450 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		187AB33A1554C62000E46450 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		187AB3141554C61F00E46450 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				187AB3291554C61F00E46450 /* main.m in Sources */,
+				187AB3361554C61F00E46450 /* VideoAnalyser.xcdatamodeld in Sources */,
+				187AB3831554D72300E46450 /* VideoAnalyserDelegate.mm in Sources */,
+				187AB38B1555071000E46450 /* VideoAnalyzerView.mm in Sources */,
+				187AB3931555080500E46450 /* VideoAnalyserViewController.mm in Sources */,
+				18A7F3911555CD7E0079797D /* NSImage+OpenCV.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		187AB3371554C62000E46450 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				187AB34A1554C62000E46450 /* VideoAnalyserTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		187AB3411554C62000E46450 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 187AB3171554C61F00E46450 /* VideoAnalyser */;
+			targetProxy = 187AB3401554C62000E46450 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		187AB3251554C61F00E46450 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				187AB3261554C61F00E46450 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		187AB32B1554C61F00E46450 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				187AB32C1554C61F00E46450 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		187AB3311554C61F00E46450 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				187AB3321554C61F00E46450 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		187AB3451554C62000E46450 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				187AB3461554C62000E46450 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		187AB34B1554C62000E46450 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		187AB34C1554C62000E46450 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		187AB34E1554C62000E46450 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VideoAnalyser/VideoAnalyser-Prefix.pch";
+				INFOPLIST_FILE = "VideoAnalyser/VideoAnalyser-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		187AB34F1554C62000E46450 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VideoAnalyser/VideoAnalyser-Prefix.pch";
+				INFOPLIST_FILE = "VideoAnalyser/VideoAnalyser-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		187AB3511554C62000E46450 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VideoAnalyser.app/Contents/MacOS/VideoAnalyser";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VideoAnalyser/VideoAnalyser-Prefix.pch";
+				INFOPLIST_FILE = "VideoAnalyserTests/VideoAnalyserTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		187AB3521554C62000E46450 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VideoAnalyser.app/Contents/MacOS/VideoAnalyser";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VideoAnalyser/VideoAnalyser-Prefix.pch";
+				INFOPLIST_FILE = "VideoAnalyserTests/VideoAnalyserTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		187AB3121554C61E00E46450 /* Build configuration list for PBXProject "VideoAnalyser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				187AB34B1554C62000E46450 /* Debug */,
+				187AB34C1554C62000E46450 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		187AB34D1554C62000E46450 /* Build configuration list for PBXNativeTarget "VideoAnalyser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				187AB34E1554C62000E46450 /* Debug */,
+				187AB34F1554C62000E46450 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		187AB3501554C62000E46450 /* Build configuration list for PBXNativeTarget "VideoAnalyserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				187AB3511554C62000E46450 /* Debug */,
+				187AB3521554C62000E46450 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		187AB3341554C61F00E46450 /* VideoAnalyser.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				187AB3351554C61F00E46450 /* VideoAnalyser.xcdatamodel */,
+			);
+			currentVersion = 187AB3351554C61F00E46450 /* VideoAnalyser.xcdatamodel */;
+			path = VideoAnalyser.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 187AB30F1554C61E00E46450 /* Project object */;
+}
