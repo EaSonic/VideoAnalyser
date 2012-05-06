@@ -10,6 +10,11 @@
 #import <AVFoundation/AVFoundation.h>
 #import "VideoAnalyzerView.h"
 
-@interface VideoAnalyserViewController : NSViewController <AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface VideoAnalyserViewController : NSViewController 
+                                         <
+                                          AVCaptureVideoDataOutputSampleBufferDelegate,
+                                          AVCaptureFileOutputDelegate,
+                                          AVCaptureFileOutputRecordingDelegate
+                                         >
 
 @end
