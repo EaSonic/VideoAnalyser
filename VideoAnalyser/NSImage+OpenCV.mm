@@ -22,7 +22,7 @@ static void ProviderReleaseDataNOP(void *info, const void *data, size_t size)
 -(CGImageRef) CGImage
 {
     NSData           *cocoaData     = [NSBitmapImageRep TIFFRepresentationOfImageRepsInArray: [self representations]];
-    CFDataRef        carbonData     = (__bridge CFDataRef)cocoaData;
+    CFDataRef        carbonData     = (__bridge_retained CFDataRef)cocoaData;
     CGImageSourceRef imageSourceRef = CGImageSourceCreateWithData(carbonData, NULL);
     CGImageRef       out            = CGImageSourceCreateImageAtIndex(imageSourceRef, 0, NULL);
     CFRelease(imageSourceRef);

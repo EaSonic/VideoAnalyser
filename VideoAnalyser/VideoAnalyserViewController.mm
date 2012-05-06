@@ -10,9 +10,18 @@
 
 @interface VideoAnalyserViewController ()
 
+// Main Application View
+@property (atomic, retain)  IBOutlet NSWindow          *mainAppWindow_;
+@property (nonatomic, weak) IBOutlet VideoAnalyzerView *videoAnalyserview_;
+
+
 @end
 
 @implementation VideoAnalyserViewController
+
+// Synthesize Property to make sure they are not renamed
+@synthesize mainAppWindow_     = _mainAppWindow_;
+@synthesize videoAnalyserview_ = _videoAnalyserview_;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

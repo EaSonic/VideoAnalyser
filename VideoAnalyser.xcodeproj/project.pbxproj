@@ -33,7 +33,6 @@
 		187AB36F1554C6A800E46450 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB36E1554C6A800E46450 /* AVFoundation.framework */; };
 		187AB3721554C73200E46450 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB3701554C73200E46450 /* Quartz.framework */; };
 		187AB3731554C73200E46450 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB3711554C73200E46450 /* QuartzCore.framework */; };
-		187AB3831554D72300E46450 /* VideoAnalyserDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 187AB3821554D72300E46450 /* VideoAnalyserDelegate.mm */; };
 		187AB38B1555071000E46450 /* VideoAnalyzerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 187AB38A1555071000E46450 /* VideoAnalyzerView.mm */; };
 		187AB3931555080500E46450 /* VideoAnalyserViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 187AB3921555080500E46450 /* VideoAnalyserViewController.mm */; };
 		18A7F3911555CD7E0079797D /* NSImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 18A7F3901555CD7E0079797D /* NSImage+OpenCV.mm */; };
@@ -84,8 +83,6 @@
 		187AB36E1554C6A800E46450 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		187AB3701554C73200E46450 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		187AB3711554C73200E46450 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		187AB3811554D72300E46450 /* VideoAnalyserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoAnalyserDelegate.h; sourceTree = "<group>"; };
-		187AB3821554D72300E46450 /* VideoAnalyserDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoAnalyserDelegate.mm; sourceTree = "<group>"; };
 		187AB3891555071000E46450 /* VideoAnalyzerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoAnalyzerView.h; sourceTree = "<group>"; };
 		187AB38A1555071000E46450 /* VideoAnalyzerView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoAnalyzerView.mm; sourceTree = "<group>"; };
 		187AB3911555080500E46450 /* VideoAnalyserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoAnalyserViewController.h; sourceTree = "<group>"; };
@@ -254,7 +251,6 @@
 			isa = PBXGroup;
 			children = (
 				187AB388155501AD00E46450 /* ViewController */,
-				187AB3871555019C00E46450 /* AppDelegate */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -279,15 +275,6 @@
 				187AB3311554C61F00E46450 /* MainMenu.xib */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		187AB3871555019C00E46450 /* AppDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				187AB3811554D72300E46450 /* VideoAnalyserDelegate.h */,
-				187AB3821554D72300E46450 /* VideoAnalyserDelegate.mm */,
-			);
-			name = AppDelegate;
 			sourceTree = "<group>";
 		};
 		187AB388155501AD00E46450 /* ViewController */ = {
@@ -425,7 +412,6 @@
 			files = (
 				187AB3291554C61F00E46450 /* main.m in Sources */,
 				187AB3361554C61F00E46450 /* VideoAnalyser.xcdatamodeld in Sources */,
-				187AB3831554D72300E46450 /* VideoAnalyserDelegate.mm in Sources */,
 				187AB38B1555071000E46450 /* VideoAnalyzerView.mm in Sources */,
 				187AB3931555080500E46450 /* VideoAnalyserViewController.mm in Sources */,
 				18A7F3911555CD7E0079797D /* NSImage+OpenCV.mm in Sources */,

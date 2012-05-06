@@ -12,9 +12,6 @@
 {
     @private
     
-        // Main application window
-        IBOutlet NSWindow *appMainWindow_;
-    
         // If define any panle view define here.
 }
 

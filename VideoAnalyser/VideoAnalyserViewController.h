@@ -8,9 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 #import <AVFoundation/AVFoundation.h>
+#import "VideoAnalyzerView.h"
 
 @interface VideoAnalyserViewController : NSViewController <AVCaptureVideoDataOutputSampleBufferDelegate>
-
-
 
 @end

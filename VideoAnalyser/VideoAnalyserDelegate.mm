@@ -13,6 +13,8 @@
 // Interface: The private property of the Controller
 @interface VideoAnalyserDelegate()
 
+// Main application window
+@property (nonatomic, weak)   IBOutlet NSWindow *appMainWindow_;
 @property (nonatomic, strong) VideoAnalyserViewController *mainViewController_;
 
 @end
@@ -25,6 +27,7 @@
 @implementation VideoAnalyserDelegate
 
 // Set the getter to avoid rename
+@synthesize appMainWindow_      = _appMainWindow_;
 @synthesize mainViewController_ = _mainViewController_;
 
 /*-----------------------------------------------------------------------------------------------------*/
