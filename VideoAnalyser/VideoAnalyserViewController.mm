@@ -90,6 +90,9 @@
             self.toBProcessedFrame_.videoSettings   = 
                 [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA] 
                                             forKey:(id)kCVPixelBufferPixelFormatTypeKey];
+            /*[self.toBProcessedFrame_ setSampleBufferDelegate:self 
+                                                       queue:dispatch_get_main_queue()];*/
+            
             // Add the stuff to the session
             [self.captureSession_  addInput:self.videoInput_];
             [self.captureSession_ addOutput:self.videoStore_];
@@ -119,16 +122,21 @@
 #pragma mark Control Part
 - (IBAction)recordVideo_:(NSButton *)sender 
 {
-    
+    NSLog(@"Recording");
+    [self.videoStore_ startRecordingToOutputFileURL:[NSURL fileURLWithPath:
+                                                     @"/Users/apple/Documents/NFS_Share_Poly_Server/My Recorded Movie.mov"]
+                                  recordingDelegate:self];
 }
 
 - (IBAction)stopRecord_:(NSButton *)sender 
 {
-    
+    NSLog(@"Stop");
+    [self.videoStore_ startRecordingToOutputFileURL:nil 
+                                  recordingDelegate:self];
 }
 
 - (IBAction)switchVAMethods:(NSPopUpButton *)sender 
 {
-    
+    NSLog(@"Switching");
 }
 @end
