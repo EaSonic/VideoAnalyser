@@ -17,7 +17,7 @@
 #pragma mark MainWindowControl
 // Main Application View
 @property (atomic, retain)  IBOutlet NSWindow          *mainAppWindow_;
-@property (nonatomic, weak) IBOutlet VideoAnalyzerView *videoAnalyserPreview_;
+@property (nonatomic, weak) IBOutlet VideoAnalyzerView *videoAnalyserview_;
     // Main Application Control Handle
 - (IBAction)   recordVideo_: (NSButton *)      sender;
 - (IBAction)    stopRecord_: (NSButton *)      sender;
@@ -53,7 +53,7 @@
 
 // Synthesize Property to make sure they are not renamed
 @synthesize mainAppWindow_        = _mainAppWindow_;
-@synthesize videoAnalyserPreview_ = _videoAnalyserPreview_;
+@synthesize videoAnalyserview_    = _videoAnalyserview_;
 @synthesize captureSession_       = _captureSession_;
 @synthesize videoDevice_          = _videoDevice_;
 @synthesize videoInput_           = _videoInput_;
@@ -88,8 +88,10 @@
             // Set to be processed frame == current frame
             self.toBProcessedFrame_                 = [[AVCaptureVideoDataOutput alloc] init];
             self.toBProcessedFrame_.videoSettings   = 
-                [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA] 
-                                            forKey:(id)kCVPixelBufferPixelFormatTypeKey];
+                [NSDictionary dictionaryWithObject:[
+                                                    NSNumber numberWithInt:kCVPixelFormatType_32BGRA] 
+                                            forKey:(id)kCVPixelBufferPixelFormatTypeKey
+                                                    ];
             /*[self.toBProcessedFrame_ setSampleBufferDelegate:self 
                                                        queue:dispatch_get_main_queue()];*/
             
@@ -123,8 +125,10 @@
 - (IBAction)recordVideo_:(NSButton *)sender 
 {
     NSLog(@"Recording");
-    [self.videoStore_ startRecordingToOutputFileURL:[NSURL fileURLWithPath:
-                                                     @"/Users/apple/Documents/NFS_Share_Poly_Server/My Recorded Movie.mov"]
+    [self.videoStore_ startRecordingToOutputFileURL:[
+                                                     NSURL fileURLWithPath:
+                                                     @"/Users/apple/Documents/NFS_Share_Poly_Server/My Recorded Movie.mov"
+                                                     ]
                                   recordingDelegate:self];
 }
 

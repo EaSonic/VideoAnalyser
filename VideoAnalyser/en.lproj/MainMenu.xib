@@ -1316,6 +1316,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{20, 20}, {584, 455}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="402795628"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSClassName">VideoAnalyzerView</string>
@@ -1325,6 +1326,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{634, 412}, {82, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="513087632"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
@@ -1353,6 +1355,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{634, 370}, {82, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="1036719828"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
@@ -1377,6 +1380,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{609, 282}, {132, 26}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="682292412"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
@@ -1445,6 +1449,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{628, 314}, {113, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
+							<reference key="NSWindow"/>
 							<string key="NSReuseIdentifierKey">_NS:1505</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="623685243">
@@ -1477,6 +1482,7 @@
 					</array>
 					<string key="NSFrameSize">{753, 495}</string>
 					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="432011609"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
@@ -2145,11 +2151,11 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">videoAnalyserPreview_</string>
+						<string key="label">videoAnalyserview_</string>
 						<reference key="source" ref="465708904"/>
 						<reference key="destination" ref="432011609"/>
 					</object>
-					<int key="connectionID">796</int>
+					<int key="connectionID">799</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3795,7 +3801,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">796</int>
+			<int key="maxID">799</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
