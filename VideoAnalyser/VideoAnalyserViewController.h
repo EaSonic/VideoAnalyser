@@ -17,4 +17,6 @@
                                           AVCaptureFileOutputRecordingDelegate
                                          >
 
+// I did not put any properity due to the fact that they are private, and they are decalared in the .mm file
+
 @end

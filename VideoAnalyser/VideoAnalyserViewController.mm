@@ -17,12 +17,29 @@
 #pragma mark MainWindowControl
 // Main Application View
 @property (atomic, retain)  IBOutlet NSWindow          *mainAppWindow_;
-@property (nonatomic, weak) IBOutlet VideoAnalyzerView *videoAnalyserview_;
+@property (nonatomic, weak) IBOutlet VideoAnalyzerView *videoAnalyserPreview_;
     // Main Application Control Handle
 - (IBAction)   recordVideo_: (NSButton *)      sender;
 - (IBAction)    stopRecord_: (NSButton *)      sender;
 - (IBAction)switchVAMethods: (NSPopUpButton *) sender;
 
+#pragma mark -
+#pragma mark MainWindowControl
+// Property that used to do VideoCapture&Preview&Store
+    // For capture session
+    @property (nonatomic, strong) AVCaptureSession              *captureSession_;
+    // For capture device
+    @property (nonatomic, strong) AVCaptureDevice               *videoDevice_;
+    @property (nonatomic, strong) AVCaptureDeviceInput          *videoInput_;
+    /*Add audio device if needed*/
+    // For preview
+    @property (nonatomic, strong) AVCaptureVideoPreviewLayer    *videoPreview_;
+    /*Add audio device if needed*/
+    // For storing
+    @property (nonatomic, strong) AVCaptureMovieFileOutput      *videoStore_;
+
+// Property used to do Video Analysis
+@property (nonatomic, strong) AVCaptureVideoDataOutput  *toBProcessedFrame_;
 
 @end
 
@@ -35,13 +52,52 @@
 #pragma mark synthesize of property
 
 // Synthesize Property to make sure they are not renamed
-@synthesize mainAppWindow_     = _mainAppWindow_;
-@synthesize videoAnalyserview_ = _videoAnalyserview_;
+@synthesize mainAppWindow_        = _mainAppWindow_;
+@synthesize videoAnalyserPreview_ = _videoAnalyserPreview_;
+@synthesize captureSession_       = _captureSession_;
+@synthesize videoDevice_          = _videoDevice_;
+@synthesize videoInput_           = _videoInput_;
+@synthesize videoPreview_         = _videoPreview_;
+@synthesize videoStore_           = _videoStore_;
+@synthesize toBProcessedFrame_    = _toBProcessedFrame_;
 
 
 #pragma mark -
 #pragma mark Init of the App
 // Initilize the Nib
+
+- (id)init
+{
+    self = [super init];
+    if (self) 
+        {
+            // Create a capture session
+            self.captureSession_                    = [[AVCaptureSession alloc] init];
+            self.captureSession_.sessionPreset      = AVCaptureSessionPreset320x240;
+            
+            // Get a device
+            self.videoDevice_                       = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+            self.videoInput_                        = [AVCaptureDeviceInput deviceInputWithDevice:self.videoDevice_
+                                                                                       error:nil];
+            
+            // Attach output to session
+            self.videoStore_                        = [[AVCaptureMovieFileOutput alloc] init];
+            [self.videoStore_ setDelegate:self];
+            
+            
+            // Set to be processed frame == current frame
+            self.toBProcessedFrame_                 = [[AVCaptureVideoDataOutput alloc] init];
+            self.toBProcessedFrame_.videoSettings   = 
+                [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA] 
+                                            forKey:(id)kCVPixelBufferPixelFormatTypeKey];
+            // Add the stuff to the session
+            [self.captureSession_  addInput:self.videoInput_];
+            [self.captureSession_ addOutput:self.videoStore_];
+            [self.captureSession_ addOutput:self.toBProcessedFrame_];
+        }
+    return self;
+}
+
 - (NSString *) nibName
 {
     return @"VideoAnalyzer";
