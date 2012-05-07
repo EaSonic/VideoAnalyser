@@ -129,14 +129,21 @@
 
 - (void)awakeFromNib
 {
+    // init all the AVCapture stuff
     [self init];
+    
     CALayer *previewViewLayer = [self.videoAnalyserview_ layer];
 	[previewViewLayer setBackgroundColor:CGColorGetConstantColor(kCGColorBlack)];
-	AVCaptureVideoPreviewLayer *newPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.captureSession_];
-	[newPreviewLayer setFrame:[previewViewLayer bounds]];
-	[newPreviewLayer setAutoresizingMask:kCALayerWidthSizable | kCALayerHeightSizable];
-	[previewViewLayer addSublayer:newPreviewLayer];
-	self.videoPreview_ = newPreviewLayer;
+    
+	AVCaptureVideoPreviewLayer *basePreviewLayer = [
+                                                   [AVCaptureVideoPreviewLayer alloc] 
+                                                   initWithSession:self.captureSession_
+                                                   ];
+	[basePreviewLayer            setFrame:[previewViewLayer bounds]                   ];
+	[basePreviewLayer setAutoresizingMask:kCALayerWidthSizable | kCALayerHeightSizable];
+	[previewViewLayer        addSublayer:basePreviewLayer                             ];
+	
+    self.videoPreview_ = basePreviewLayer;
 	
 	
 	// Start the session
@@ -161,8 +168,7 @@
 - (IBAction)stopRecord_:(NSButton *)sender 
 {
     NSLog(@"Stop");
-    [self.videoStore_ startRecordingToOutputFileURL:nil 
-                                  recordingDelegate:self];
+    [self.videoStore_ stopRecording];
 }
 
 - (IBAction)switchVAMethods:(NSPopUpButton *)sender 
