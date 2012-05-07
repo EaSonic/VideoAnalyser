@@ -71,6 +71,7 @@
     self = [super init];
     if (self) 
         {
+            NSLog(@"init Successfully!");
             // Create a capture session
             self.captureSession_                    = [[AVCaptureSession alloc] init];
             self.captureSession_.sessionPreset      = AVCaptureSessionPreset320x240;
@@ -110,7 +111,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:@"VideoAnalyzer" bundle:nibBundleOrNil];
+    self = [super initWithNibName:@"VideoAnalyzer" bundle:nil];
     if (self) 
         {
             NSLog(@"Initialize Successfully!");
@@ -120,16 +121,41 @@
 }
 
 
+- (void)windowWillClose:(NSNotification *)notification
+{
+    NSLog(@"CloseWin~");
+}
+
+
+- (void)awakeFromNib
+{
+    [self init];
+    CALayer *previewViewLayer = [self.videoAnalyserview_ layer];
+	[previewViewLayer setBackgroundColor:CGColorGetConstantColor(kCGColorBlack)];
+	AVCaptureVideoPreviewLayer *newPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.captureSession_];
+	[newPreviewLayer setFrame:[previewViewLayer bounds]];
+	[newPreviewLayer setAutoresizingMask:kCALayerWidthSizable | kCALayerHeightSizable];
+	[previewViewLayer addSublayer:newPreviewLayer];
+	self.videoPreview_ = newPreviewLayer;
+	
+	
+	// Start the session
+	[self.captureSession_ startRunning];
+}
+
+
 #pragma mark -
 #pragma mark Control Part
 - (IBAction)recordVideo_:(NSButton *)sender 
 {
     NSLog(@"Recording");
-    [self.videoStore_ startRecordingToOutputFileURL:[
+    [
+     self.videoStore_ startRecordingToOutputFileURL:[
                                                      NSURL fileURLWithPath:
                                                      @"/Users/apple/Documents/NFS_Share_Poly_Server/My Recorded Movie.mov"
                                                      ]
-                                  recordingDelegate:self];
+                                  recordingDelegate:self
+     ];
 }
 
 - (IBAction)stopRecord_:(NSButton *)sender 
@@ -143,4 +169,17 @@
 {
     NSLog(@"Switching");
 }
+
+
+#pragma mark -
+#pragma mark AVCaptureFileOutputDelegate,AVCaptureFileOutputRecordingDelegate Part
+// Open QuickTime to play recorded Frame
+- (void)captureOutput:(AVCaptureFileOutput *)captureOutput didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray *)connections error:(NSError *)recordError
+{
+    [[NSWorkspace sharedWorkspace] openURL:outputFileURL];
+}
+
 @end
+
+
+
