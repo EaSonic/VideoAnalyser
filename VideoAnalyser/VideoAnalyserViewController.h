@@ -8,7 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 #import <AVFoundation/AVFoundation.h>
+#import <QuartzCore/QuartzCore.h>
+#import <CoreMedia/CoreMedia.h>
 #import "VideoAnalyzerView.h"
+#import "NSImage+OpenCV.h"
 
 @interface VideoAnalyserViewController : NSViewController 
                                          <

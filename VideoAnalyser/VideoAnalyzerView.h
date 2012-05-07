@@ -10,4 +10,8 @@
 
 @interface VideoAnalyzerView : NSView
 
+@property (nonatomic, readwrite) CGPoint center;
+
+- (id)initWithImage: (NSString *) fileName;
+
 @end

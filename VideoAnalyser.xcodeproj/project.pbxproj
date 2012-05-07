@@ -35,6 +35,9 @@
 		187AB3731554C73200E46450 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187AB3711554C73200E46450 /* QuartzCore.framework */; };
 		187AB38B1555071000E46450 /* VideoAnalyzerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 187AB38A1555071000E46450 /* VideoAnalyzerView.mm */; };
 		187AB3931555080500E46450 /* VideoAnalyserViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 187AB3921555080500E46450 /* VideoAnalyserViewController.mm */; };
+		188017CA155781A800DCF508 /* VideoAnalysisModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 188017C9155781A800DCF508 /* VideoAnalysisModel.mm */; };
+		188017D31557870400DCF508 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188017D21557870400DCF508 /* CoreMedia.framework */; };
+		188017D515578F9C00DCF508 /* glasses.png in Resources */ = {isa = PBXBuildFile; fileRef = 188017D415578F9C00DCF508 /* glasses.png */; };
 		18A7F3911555CD7E0079797D /* NSImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 18A7F3901555CD7E0079797D /* NSImage+OpenCV.mm */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +90,10 @@
 		187AB38A1555071000E46450 /* VideoAnalyzerView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoAnalyzerView.mm; sourceTree = "<group>"; };
 		187AB3911555080500E46450 /* VideoAnalyserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoAnalyserViewController.h; sourceTree = "<group>"; };
 		187AB3921555080500E46450 /* VideoAnalyserViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoAnalyserViewController.mm; sourceTree = "<group>"; };
+		188017C8155781A800DCF508 /* VideoAnalysisModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoAnalysisModel.h; sourceTree = "<group>"; };
+		188017C9155781A800DCF508 /* VideoAnalysisModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoAnalysisModel.mm; sourceTree = "<group>"; };
+		188017D21557870400DCF508 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		188017D415578F9C00DCF508 /* glasses.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glasses.png; sourceTree = "<group>"; };
 		18A7F38F1555CD7E0079797D /* NSImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+OpenCV.h"; sourceTree = "<group>"; };
 		18A7F3901555CD7E0079797D /* NSImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSImage+OpenCV.mm"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188017D31557870400DCF508 /* CoreMedia.framework in Frameworks */,
 				187AB3721554C73200E46450 /* Quartz.framework in Frameworks */,
 				187AB3731554C73200E46450 /* QuartzCore.framework in Frameworks */,
 				187AB36F1554C6A800E46450 /* AVFoundation.framework in Frameworks */,
@@ -150,6 +158,7 @@
 		187AB31B1554C61F00E46450 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				188017D21557870400DCF508 /* CoreMedia.framework */,
 				187AB3701554C73200E46450 /* Quartz.framework */,
 				187AB3711554C73200E46450 /* QuartzCore.framework */,
 				187AB36E1554C6A800E46450 /* AVFoundation.framework */,
@@ -268,6 +277,7 @@
 		187AB37C1554CA7300E46450 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				188017D415578F9C00DCF508 /* glasses.png */,
 				187AB3241554C61F00E46450 /* VideoAnalyser-Info.plist */,
 				187AB3251554C61F00E46450 /* InfoPlist.strings */,
 				187AB32B1554C61F00E46450 /* Credits.rtf */,
@@ -298,6 +308,8 @@
 		187AB39515550B2800E46450 /* VideoAnalyzerModel */ = {
 			isa = PBXGroup;
 			children = (
+				188017C8155781A800DCF508 /* VideoAnalysisModel.h */,
+				188017C9155781A800DCF508 /* VideoAnalysisModel.mm */,
 			);
 			name = VideoAnalyzerModel;
 			sourceTree = "<group>";
@@ -376,6 +388,7 @@
 				187AB3271554C61F00E46450 /* InfoPlist.strings in Resources */,
 				187AB32D1554C61F00E46450 /* Credits.rtf in Resources */,
 				187AB3331554C61F00E46450 /* MainMenu.xib in Resources */,
+				188017D515578F9C00DCF508 /* glasses.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +428,7 @@
 				187AB38B1555071000E46450 /* VideoAnalyzerView.mm in Sources */,
 				187AB3931555080500E46450 /* VideoAnalyserViewController.mm in Sources */,
 				18A7F3911555CD7E0079797D /* NSImage+OpenCV.mm in Sources */,
+				188017CA155781A800DCF508 /* VideoAnalysisModel.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

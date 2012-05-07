@@ -41,6 +41,12 @@
 // Property used to do Video Analysis
 @property (nonatomic, strong) AVCaptureVideoDataOutput  *toBProcessedFrame_;
 
+// Supporting Property
+@property (nonatomic, strong) CIContext                 *pixelContext_;
+
+@property (nonatomic, strong) CIDetector                *faceDetector_;
+@property (nonatomic, strong) VideoAnalyzerView         *glasses_;
+
 @end
 
 
@@ -60,7 +66,31 @@
 @synthesize videoPreview_         = _videoPreview_;
 @synthesize videoStore_           = _videoStore_;
 @synthesize toBProcessedFrame_    = _toBProcessedFrame_;
+@synthesize pixelContext_         = _pixelContext_;
 
+@synthesize faceDetector_         = _faceDetector_;
+@synthesize glasses_              = _glasses_;
+
+- (CIDetector *)faceDetector_
+{
+    if (!_faceDetector_) 
+        {
+            NSDictionary *detectorOptions = [
+                                             NSDictionary dictionaryWithObjectsAndKeys:
+                                             CIDetectorAccuracyLow, CIDetectorAccuracy, nil
+                                             ];
+            _faceDetector_ = [CIDetector detectorOfType:CIDetectorTypeFace
+                                                context:nil
+                                                options:detectorOptions];
+        }
+    return _faceDetector_;
+}
+- (VideoAnalyzerView *)glasses_
+{
+    _glasses_ = [VideoAnalyzerView new];
+    [_glasses_ setWantsLayer:YES];
+    return _glasses_;
+}
 
 #pragma mark -
 #pragma mark Init of the App
@@ -100,6 +130,8 @@
             [self.captureSession_  addInput:self.videoInput_];
             [self.captureSession_ addOutput:self.videoStore_];
             [self.captureSession_ addOutput:self.toBProcessedFrame_];
+            
+            //self.glasses_ = [[VideoAnalyzerView alloc] initWithImage:@"glasses.png"];
         }
     return self;
 }
@@ -126,7 +158,17 @@
     NSLog(@"CloseWin~");
 }
 
+- (CIContext *) pixelContext_
+{
+    if(!_pixelContext_)
+        {
+            _pixelContext_ = [CIContext contextWithCGContext:nil options:nil];
+        }
+    return _pixelContext_;
+}
 
+#pragma mark -
+#pragma mark Processing Frame starts here
 - (void)awakeFromNib
 {
     // init all the AVCapture stuff
@@ -141,7 +183,7 @@
                                                    ];
 	[basePreviewLayer            setFrame:[previewViewLayer bounds]                   ];
 	[basePreviewLayer setAutoresizingMask:kCALayerWidthSizable | kCALayerHeightSizable];
-	[previewViewLayer        addSublayer:basePreviewLayer                             ];
+	[previewViewLayer         addSublayer:basePreviewLayer                            ];
 	
     self.videoPreview_ = basePreviewLayer;
 	
@@ -150,6 +192,90 @@
 	[self.captureSession_ startRunning];
 }
 
+
+- (void)captureOutput:(AVCaptureOutput *)    captureOutput 
+didOutputSampleBuffer:(CMSampleBufferRef)    sampleBuffer 
+       fromConnection:(AVCaptureConnection *)connection
+{
+    
+    CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer   (sampleBuffer);
+    OSType                format = CVPixelBufferGetPixelFormatType(pixelBuffer);
+    CGRect             videoRect = CGRectMake(
+                                              0.0f, 0.0f, 
+                                              CVPixelBufferGetWidth(pixelBuffer), 
+                                              CVPixelBufferGetHeight(pixelBuffer)
+                                              );
+    CIImage   *toBProcessedimgbf = [CIImage imageWithCVImageBuffer:pixelBuffer];
+        
+    NSArray *features = [self.faceDetector_ featuresInImage:toBProcessedimgbf];
+    
+    bool faceFound = false;
+    
+    for (CIFaceFeature *face in features) 
+    {
+        if (face.hasLeftEyePosition && face.hasRightEyePosition) 
+        {
+            CGPoint eyeCenter = CGPointMake(face.leftEyePosition.x*0.5+face.rightEyePosition.x*0.5, 
+                                            face.leftEyePosition.y*0.5+face.rightEyePosition.y*0.5);
+            
+            // Set the glasses position based on mouth position
+            double scalex = self.videoAnalyserview_.bounds.size.height/toBProcessedimgbf.extent.size.width;
+            double scaley = self.videoAnalyserview_.bounds.size.width/toBProcessedimgbf.extent.size.height;
+            self.glasses_.center = CGPointMake(scaley*eyeCenter.y-self.glasses_.bounds.size.height/4.0,
+                                               scalex*(eyeCenter.x));
+            
+            // Set the angle of the glasses using eye deltas
+            double deltax = face.leftEyePosition.x-face.rightEyePosition.x;
+            double deltay = face.leftEyePosition.y-face.rightEyePosition.y;
+            double angle  = atan2(deltax, deltay);
+            //self.glasses_.transform = CGAffineTransformMakeRotation(angle+M_PI);
+            
+            // Set size based on distance between the two eyes:
+            double scale = 3.0*sqrt(deltax*deltax+deltay*deltay);
+            self.glasses_.bounds = CGRectMake(0, 0, scale, scale);
+            faceFound = true;
+        }
+    }
+   
+    
+    
+    
+    CGImageRef processingImgRef  = [
+                                    self.pixelContext_ 
+                                    createCGImage:toBProcessedimgbf 
+                                         fromRect:toBProcessedimgbf.extent
+                                    ];
+
+    
+    // For OpenCV to do the processing~
+    if (format == kCVPixelFormatType_420YpCbCr8BiPlanarFullRange) 
+        {
+            // For grayscale mode, the luminance channel of the YUV data is used
+            CVPixelBufferLockBaseAddress(pixelBuffer, 0);
+            void *baseaddress = CVPixelBufferGetBaseAddressOfPlane(pixelBuffer, 0);
+        
+            cv::Mat mat(videoRect.size.height, videoRect.size.width, CV_8UC1, baseaddress, 0);
+        
+        
+            CVPixelBufferUnlockBaseAddress(pixelBuffer, 0); 
+        }
+    else
+        if (format == kCVPixelFormatType_32BGRA) 
+        {
+            // For color mode a 4-channel cv::Mat is created from the BGRA data
+            CVPixelBufferLockBaseAddress(pixelBuffer, 0);
+            void *baseaddress = CVPixelBufferGetBaseAddress(pixelBuffer);
+        
+            cv::Mat mat(videoRect.size.height, videoRect.size.width, CV_8UC4, baseaddress, 0);
+        
+        
+            CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);    
+        }
+    else{
+            NSLog(@"Unsupported video format");
+        }
+
+}
 
 #pragma mark -
 #pragma mark Control Part

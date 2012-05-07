@@ -10,6 +10,16 @@
 
 @implementation VideoAnalyzerView
 
+@synthesize center = center_;
+
+- (CGPoint) center
+{
+    center_ = CGPointMake((self.frame.origin.x + (self.frame.size.width / 2)),
+                          (self.frame.origin.y + (self.frame.size.height / 2))
+                          );
+    return center_;
+}
+
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
