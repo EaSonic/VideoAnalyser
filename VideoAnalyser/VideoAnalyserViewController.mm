@@ -230,6 +230,8 @@ didOutputSampleBuffer:(CMSampleBufferRef)    sampleBuffer
             double angle  = atan2(deltax, deltay);
             //self.glasses_.transform = CGAffineTransformMakeRotation(angle+M_PI);
             
+            //NSImage *img = [[NSImage alloc] initWithContentsOfFile:@"glasses.png"];
+            
             // Set size based on distance between the two eyes:
             double scale = 3.0*sqrt(deltax*deltax+deltay*deltay);
             self.glasses_.bounds = CGRectMake(0, 0, scale, scale);
